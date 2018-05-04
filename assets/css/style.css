@@ -1,0 +1,550 @@
+/*
+
+Style   : B4 CSS
+Version : 1.0
+Author  : Guilherme Raimondi - Techmob
+
+Copyright © All rights Reserved 
+
+*/
+
+
+/*------------------------
+[TABLE OF CONTENTS]
+    
+1. GLOBAL STYLES
+2. NAVBAR
+3. HERO
+4. TABS
+5. TESTIMONIALS
+6. IMAGE GALLERY
+7. PRICING
+8. CALL TO ACTION
+9. FOOTER
+
+------------------------*/
+
+
+html{
+	/* root font-size 62.5% = 10px */
+	font-size: 90%; /*deixa o ususario dar zoom na pag*/
+}
+body{
+	box-sizing: border-box;
+}
+.display-50{
+	font-size: 1.94rem;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+}
+.main{
+	margin-bottom: 2rem;
+}
+@media only screen and (min-width: 321px){
+    html {
+      font-size: 100%;
+	}
+}
+@media only screen and (min-width: 450px){
+    html {
+      font-size: 105%;
+	}
+	.display-50{
+		font-size: 2.5rem;
+	}
+}
+@media only screen and (min-width: 576px){
+    html {
+      font-size: 110%;
+	}
+}
+@media only screen and (min-width: 768px){
+    html {
+      font-size: 110%;
+	}
+	.text-home{
+		font-size: 1.2rem;
+	}
+	.showcase{
+	background-attachment: fixed;
+	}
+	.
+}
+@media only screen and (min-width: 992px){
+    html {
+    	font-size: 120%;
+  	}
+  	.img-passos{
+  		margin-left: 2rem;
+  	}
+  	.descrip-title{
+  		text-align: left;
+  	}
+	.passos__itens{
+		display: flex;
+		align-items: center;
+		text-align: left;
+	}
+	.passos__itens__item__content{
+		margin-left: 2rem;
+	}
+}
+@media only screen and (min-width: 1200px){
+    html {
+		font-size: 125%;
+	}
+}
+.description{
+	background-color: #f0f0f0;
+	padding: 5rem 0;
+}
+.input{
+	margin: .2rem;
+	width: 350px !important;
+}
+.btn-square{
+	width: 100%;
+	padding: .5rem;
+	border: 1px solid black;
+	margin-bottom: 1rem;
+}
+.btn-green{
+	background-color: #28a745;
+    background-image: linear-gradient(-180deg, #34d058 0%, #28a745 90%);
+    border: 1px solid rgba(27,31,35,0.2);
+    user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    letter-spacing: .04rem;
+    margin: .2rem;
+    width: 16rem;
+}
+.btn-green:hover{
+	background-color: #269f42;
+    background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%);
+    background-position: -.5em;
+    border-color: rgba(27,31,35,0.5);
+}
+.bg-dark80{
+	background: rgba(0,0,0,0.85);
+}
+.bg-blue{
+	background: #64c5e8;
+}
+.bg-blue2{
+	background: #00a8a6;
+}
+.bg-grad-blue{
+	background: linear-gradient(
+		to right bottom,
+		rgb(100, 197, 232),
+		rgba(246, 184, 32, 0.7))
+	/*background: linear-gradient(to left bottom,#64c5e8,#f6b820);*/
+}
+.bg-yellow{
+	background: #f0c33a;
+}
+.bg-darkPink{
+	background: #372e33;
+}
+.bg-pink{
+	background: #cd3774;
+}
+.bg-black{
+	background: #0c0b13;
+}
+.bg-black2{
+	background: #0f0909;
+}
+.bg-black3{
+	background: #1e1c1d;
+}
+.bg-gradient-orange{
+	background: linear-gradient(to left bottom,#f04670,#f9c121);
+}
+.text-light-green{
+	color: #67dea3;
+}
+.text-dark-green{
+	color: #03b070;
+}
+.text-orange{
+	color: #ffaf6f;
+}
+.text-red{
+	color: #ff5a5a;
+}
+.text-small{
+	font-size: .6rem;
+}
+.text-shadow{
+	text-shadow: 1px 2px 3px rgba(0,0,0,1);
+}
+.text-shadow-light{
+	text-shadow: .5px .5px .5px rgba(0,0,0,1);
+}
+.owl-prev{
+    position: absolute;
+    top: 15%;
+    left: .2rem;
+    height: 15rem;
+}
+.owl-prev span{
+	color: #D6D6D6;
+    text-shadow: 0.5px 0.5px 0.5px rgba(50,50,50,1);
+    font-size: 6rem;
+}
+.owl-next{
+    position: absolute;
+    top: 15%;
+    right: .2rem;
+    height: 15rem;
+}
+.owl-next span{
+	color: #D6D6D6;
+    text-shadow: 0.5px 0.5px 0.5px rgba(50,50,50,1);
+    font-size: 6rem;
+}
+.owl-theme .owl-nav [class*='owl-']:hover{
+	background: transparent;
+	outline: none;
+}
+.owl-theme .owl-nav [class*='owl-'] span:hover{
+	color: #67dea3;
+}
+.owl-theme .owl-nav [class*='owl-']:focus{
+	outline: none;
+}
+.owl-theme .owl-dots .owl-dot span{
+	width: 1.7rem;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #67dea3;
+}
+.hide{
+	display: none;
+}
+@keyframes moveToLeft{
+	0%{
+		width: 280px;
+	}
+	100%{
+		width: 0%;
+		padding: 3rem 0 2rem 0;
+	}
+}
+@keyframes moveToRight{
+	0%{
+		width: 0%;
+		padding: 3rem 0 2rem 0;
+	}
+	100%{
+		width: 280px;
+		
+	}
+}
+@keyframes moveToRightFade{
+	0%{
+		transform: translateX(220px);
+		opacity: 0
+	}
+	100%{
+		transform: translate(0);
+		opacity: 1;
+		
+	}
+}
+
+.animatedToLeft{
+	animation: moveToLeft .7s;
+}
+.animatedToRight{
+	animation: moveToRight .7s;
+}
+.menu-toggle{
+	cursor: pointer;
+	outline: none;
+	border:none;
+	font-size: 25px;
+	position: fixed;
+	border-bottom-left-radius: 7px;
+	border-top-left-radius: 7px;
+	padding: 0 10px;
+	right: 0;
+	top: 2.2%;
+	background-color: #000;
+	z-index: 500;
+	transition: all 1s;
+	box-shadow: -.1rem .15rem .1rem rgba(50,50,50,.3);
+}
+.menu-toggle:hover{
+	color: #67dea3;
+}
+.menu-toggle:focus{
+	outline: none;
+}
+/* Mobile Navbar*/
+.mask {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 600;
+}
+.navbar-mobile{
+	background-image: url(https://sqy7rm.media.zestyio.com/background-polygons-2x.png), linear-gradient(-134deg,#202020 1%,#000 97%);
+	background-position: center, center;
+    background-size: cover, cover;
+	/*background-image: url(../img/background-polygons.png)*/
+	/*background: #0C0C0C;*/
+	color: rgba(255,255,255,.25);
+	font-size: .85rem;
+	line-height: 1.846;
+    padding: 3rem 2rem 2rem 2.5rem;
+    height: 100%;
+    width: 280px;
+    margin-right: -280px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 700;
+    overflow: hidden;
+    overflow-x: hidden;
+    /*-webkit-transition: all .5s ease;
+    transition: opacity 3s;*/
+    /*animation: moveToRight .7s;*/
+    box-sizing: inherit;
+    transition: 0.6s all ease;
+}
+.navbar-mobile.shown {
+	margin-right: 0;
+}
+.navbar-mobile__btn-close{
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.8rem;
+    color: white;
+    position: absolute;
+    top: 1%;
+    right: 0;
+    padding: 0 15px;
+    text-shadow: none;
+    z-index: 800;
+    white-space: nowrap;
+    transition: 0.3s all ease;
+}
+.navbar-mobile__btn-close:hover{
+	color: #67dea3;
+	transform: translateX(4px);
+}
+.navbar__content{
+	/*animation: moveToRightFade .8s;*/
+	animation-delay: .6s;
+	animation-fill-mode: backwards;
+
+}
+.navbar-mobile__title{
+	color: #71faaf;
+	font-size: .8rem;
+	margin-bottom: 1rem;
+}
+.navbar-mobile__nav{
+	overflow-y: hidden;
+	overflow-x: hidden;
+	list-style: none;
+	color: white;
+	padding: 0;
+
+}
+.navbar-mobile__nav__item{
+	white-space: nowrap;
+	margin-bottom: 30px;
+}
+.link{
+	color: #fff;
+}
+.link:link{
+	text-decoration: none;
+}
+.link:hover{
+	color: #fff;
+	opacity: .5;
+}
+.navbar-mobile__text{
+	margin: 0;
+	letter-spacing: .5px;
+}
+.navbar-mobile__social{
+	white-space: nowrap;
+	list-style: none;
+	padding: 0;
+	margin-bottom: .5rem;
+}
+.navbar-mobile__social__link{
+	display: inline-block;
+}
+.btn-outline-ligther{
+	font-size: .8rem;
+    margin-top: 6rem;
+    padding: 10px 10px;
+    width: 100%;
+}
+.navbar-mobile-footer{
+	position: absolute;
+	bottom: 0;
+	left: 20%;
+	margin-bottom: 1rem;
+}
+/* --------------------   */
+
+.img-passos{
+	max-width: 12rem;
+	display: block;
+	margin: 0 auto 1.5rem auto;
+}
+.img-passos-maior{
+	max-width: 17rem;
+}
+.section{
+	padding: 3rem 0 2rem 0;
+}
+.brand{
+	height: 2rem;
+}
+.showcase{
+	height: 100vh;
+	background-image: linear-gradient(
+		to right bottom,
+		rgba(0,0,0,0.8),
+		rgba(0,0,0,0.6)),
+		url(../img/teatro-home.png);
+	background-size: cover;
+	background-position: center center;
+	background-size: cover;
+}
+
+@media only screen and (max-width: 576px){
+	.btn-green{
+		width: 100%;
+	}
+}
+.b4-img{
+	width: 11rem;
+}
+.draw-img{
+	height: 3.5rem;
+	/*margin:1rem;*/
+}
+
+
+/* ---------------- PASSOS ---------------- */
+.passos__itens{
+	list-style: none;
+	padding: 0;
+}
+.passos__itens__item{
+	margin-top: 3rem;
+}
+.circle-icon{
+	width: 70px;
+    height: 70px;
+    font-size: 28px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    color: #03c47d;
+    background-color: #fff;
+    flex:6;
+    align-items: center;
+    padding: 30px;
+    margin: 1rem 2rem 1rem .5rem;
+    box-shadow: 0px 9px 32px 0px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+}
+
+.passos__itens__item:hover .circle-icon{
+	background-color: #03c47d;
+	color: white;
+	box-shadow: .1rem .2rem .3rem rgba(0,0,0,.5);
+}
+
+/* ---------------------------------------- */
+
+
+
+.btn-download{
+	width: 9rem;
+	margin: 0.2rem;
+}
+.card-boxes{
+	margin: 0;
+}
+.card-events{
+	box-shadow: .2rem .3rem .5rem rgba(0,0,0,.5);
+	margin: 0;
+	border-radius: 8px;
+}
+.card-img{
+	border-radius: 8px;
+}
+.card-icon{
+	position: absolute;
+	bottom: 1.5%;
+	left: 38%;
+}
+.fa-youtube{
+	display: inline-block;
+	font-size: 4rem;
+	color: red;
+}
+.icon{
+	transition: all 0.2s linear;
+}
+.icon:hover{
+	opacity: .5;
+}
+.social-icon{
+	margin: 0 10px;
+	font-size: .9rem;
+	text-align: right;
+}
+.todomes-img{
+	margin: 0 auto;
+	display: block;
+	max-width: 20rem;
+}
+.img-logo{
+	max-height: 80px;
+	margin-right: 40px;
+}
+.btn-up{
+	transition: all 0.2s linear;
+	box-shadow: .1rem .1rem .1rem rgba(0,0,0,.2);
+}
+.btn-up:hover{
+	box-shadow: .2rem .3rem .5rem rgba(0,0,0,.6);
+	transform: translateY(-.1rem);
+}
+.footer{
+	background: #262626;
+	color: white;
+	padding: 15px;
+	text-align: center;
+}
+.page-footer{
+	margin: 0;
+}
+.youtube{
+	z-index:-9;
+}
+.menino-quadro{
+	height: 9rem;
+}
+
+/* white spaces background/video menu lateral carrousel*/
