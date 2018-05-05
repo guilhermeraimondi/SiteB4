@@ -36,7 +36,14 @@ body{
 	font-size: 1.94rem;
 	text-align: center;
 	text-transform: uppercase;
-	margin-bottom: 2rem;
+}
+.heading-secondary{
+	font-size: 2.085rem;
+    font-weight: 500;
+    background-image: linear-gradient(to right, rgb(100, 197, 232), rgba(246, 184, 32, 0.9));
+    -webkit-background-clip: text;
+    color: transparent;
+   	margin-bottom: 3rem;
 }
 .main{
 	margin-bottom: 2rem;
@@ -434,6 +441,9 @@ body{
 .section{
 	padding: 3rem 0 2rem 0;
 }
+.small-section{
+	padding: 4.5rem 0 4.5rem 0;
+}
 .brand{
 	height: 2rem;
 }
@@ -472,7 +482,7 @@ body{
 	padding: 0;
 }
 .passos__itens__item{
-	margin-top: 3rem;
+	margin-top: 5rem;
 }
 .circle-icon{
 	width: 70px;
@@ -543,7 +553,7 @@ body{
 	text-align: right;
 }
 .todomes-img{
-	margin: 0 auto;
+	margin: 0 auto 2rem auto;
 	display: block;
 	max-width: 20rem;
 }
