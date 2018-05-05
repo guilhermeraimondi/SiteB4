@@ -86,8 +86,8 @@ body{
 		align-items: center;
 		text-align: left;
 	}
-	.passos__itens__item__content{
-		margin-left: 2rem;
+	.passos__itens__item{
+		margin: 0 2.5rem;
 	}
 }
 @media only screen and (min-width: 1200px){
@@ -127,6 +127,26 @@ body{
     background-position: -.5em;
     border-color: rgba(27,31,35,0.5);
 }
+.btn-cyan{
+	background-color: #28a745;
+    background-image: linear-gradient(-180deg, #18d89a 0%, #099a6b 90%);
+    border: 1px solid rgba(27,31,35,0.2);
+    user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    letter-spacing: .04rem;
+    margin: .2rem;
+    width: 16rem;
+    padding: .55rem .75rem;
+}
+.btn-cyan:hover{
+	background-color: #269f42;
+    background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%);
+    background-position: -.5em;
+    border-color: rgba(27,31,35,0.5);
+}
+
 .bg-dark80{
 	background: rgba(0,0,0,0.85);
 }
@@ -430,6 +450,9 @@ body{
 }
 
 @media only screen and (max-width: 576px){
+	.btn-cyan{
+		width: 100%;
+	}
 	.btn-green{
 		width: 100%;
 	}
@@ -496,12 +519,17 @@ body{
 .card-icon{
 	position: absolute;
 	bottom: 1.5%;
-	left: 38%;
+	left: 30%;
 }
 .fa-youtube{
 	display: inline-block;
 	font-size: 4rem;
 	color: red;
+}
+.down-arrow-icon{
+	position: absolute;
+	bottom: 1%;
+	left: 45%;
 }
 .icon{
 	transition: all 0.2s linear;
