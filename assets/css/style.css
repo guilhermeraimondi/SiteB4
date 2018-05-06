@@ -284,9 +284,9 @@ body{
 	background: transparent;
 	outline: none;
 }
-.owl-theme .owl-nav [class*='owl-'] span:hover{
+/*.owl-theme .owl-nav [class*='owl-'] span:hover{
 	color: #67dea3;
-}
+}*/
 .owl-theme .owl-nav [class*='owl-']:focus{
 	outline: none;
 }
@@ -556,7 +556,10 @@ body{
 /* ---------------------------------------- */
 
 .works-done{
-	background-image: url(../img/chalkboard.jpg);
+	background-image: url(../img/bricks.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
 }
 
 .btn-download{
