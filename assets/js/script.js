@@ -32,8 +32,20 @@ $(document).ready(function(){
         autoHeight: false
       });
 
+      $('.owl2').owlCarousel({
+        items:1,
+        loop:true,
+        dots:false,
+        nav:true,
+        // nav:true,
+        // center: true,
+        // autoplay:true,
+        fluidSpeed: true,
+        autoplayHoverPause:true,
+        autoHeight: false
+      });
 
-      var owl2 = $('.owl2').owlCarousel({
+      var owl2 = $('.owl3').owlCarousel({
          responsive:{
           0:{
               items:2
