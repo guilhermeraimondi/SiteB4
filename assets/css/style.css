@@ -268,7 +268,7 @@ body{
 .owl-prev span{
 	color: #D6D6D6;
     text-shadow: 0.5px 0.5px 0.5px rgba(50,50,50,1);
-    font-size: 6rem;
+    font-size: 4rem;
 }
 .owl-next{
     position: absolute;
@@ -278,7 +278,7 @@ body{
 .owl-next span{
 	color: #D6D6D6;
     text-shadow: 0.5px 0.5px 0.5px rgba(50,50,50,1);
-    font-size: 6rem;
+    font-size: 4rem;
 }
 .owl-theme .owl-nav [class*='owl-']:hover{
 	background: transparent;
