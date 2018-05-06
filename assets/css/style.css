@@ -37,7 +37,7 @@ body{
 	text-align: center;
 	text-transform: uppercase;
 }
-.heading-secondary{
+.heading-2nd{
 	font-size: 2.085rem;
     font-weight: 500;
     background-image: linear-gradient(to right, rgb(100, 197, 232), rgba(246, 184, 32, 0.9));
@@ -45,6 +45,16 @@ body{
     color: transparent;
    	margin-bottom: 3rem;
 }
+.heading-3rd{
+	margin: 2rem;
+}
+.heading-4th{
+	margin-bottom: 1.6rem;
+}
+.heading-5th{
+	margin-bottom: 1.3rem;
+}
+
 .main{
 	margin-bottom: 2rem;
 }
@@ -201,7 +211,7 @@ body{
 	color: #ffaf6f;
 }
 .text-red{
-	color: #ff5a5a;
+	color: #f04570;
 }
 .text-small{
 	font-size: .6rem;
@@ -531,7 +541,7 @@ body{
 	bottom: 1.5%;
 	left: 30%;
 }
-.fa-youtube{
+.youtube-icon{
 	display: inline-block;
 	font-size: 4rem;
 	color: red;
