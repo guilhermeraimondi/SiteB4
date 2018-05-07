@@ -202,15 +202,25 @@ body{
     border-color: rgba(27,31,35,0.5);
 }
 .home__content{
-	z-index: 300;
+	z-index: 3;
 }
 canvas {
+	display: none;
   position: absolute;
-  z-index: 200;
+  z-index: 2;
   bottom: 0;
   left: 0;
   width: 100%;
 }
+@media only screen and (min-width: 768px){
+	canvas{
+		display: initial;
+	}
+	.arrow{
+		right: 49% !important;
+	}
+}
+
 
 .bg-dark80{
 	background: rgba(0,0,0,0.85);
