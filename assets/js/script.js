@@ -58,16 +58,16 @@ $(document).ready(function(){
         loop:false,
         autoHeight: true
       });
-      owl = $("#owl2").data('owlCarousel');
-      owl.jumpTo(2);
 });
 
-var canvasEl = document.querySelector('#canvas');
+var canvasEl = document.getElementById('canvas');
 
-var w = canvasEl.width = $(".showcase").innerWidth();
-var h = canvasEl.height = $(".showcase").innerHeight();
-
+var w = canvasEl.width = $(".showcase").innerWidth(),
+    h = canvasEl.height = $(".showcase").innerHeight();
 function loop() {
+  w = canvasEl.width = $(".showcase").innerWidth();
+  h = canvasEl.height = $(".showcase").innerHeight();
+
   ctx.clearRect(0,0,w,h);
   
   confs.forEach(function (conf){
