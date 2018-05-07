@@ -62,30 +62,30 @@ $(document).ready(function(){
       owl.jumpTo(2);
 });
 
-const canvasEl = document.querySelector('#canvas');
+var canvasEl = document.querySelector('#canvas');
 
-const w = canvasEl.width = window.innerWidth;
-const h = canvasEl.height = window.innerHeight * 2;
+var w = canvasEl.width = window.innerWidth;
+var h = canvasEl.height = window.innerHeight * 2;
 
 function loop() {
-  requestAnimationFrame(loop);
   ctx.clearRect(0,0,w,h);
   
-  confs.forEach((conf) => {
+  confs.forEach(function (conf){
     conf.update();
     conf.draw();
-  })
+  });
+  requestAnimationFrame(loop);
 }
 
 function Confetti () {
-  //construct confetti
-  const colours = ['#fde132', '#009bde', '#ff6b00'];
+  //varruct confetti
+  var colours = ['#fde132', '#009bde', '#ff6b00'];
   
   this.x = Math.round(Math.random(10) * w);
   this.y = Math.round(Math.random(10) * h)-(h/2);
   this.rotation = Math.random(10)*360;
 
-  const size = Math.random(10)*(w/60);
+  var size = Math.random(10)*(w/60);
   this.size = size < 15 ? 15 : size;
 
   this.color = colours[Math.round(Math.random(colours.length)*10-1)]
@@ -124,10 +124,12 @@ Confetti.prototype.draw = function() {
   ctx.fill();
 };
 
-const ctx = canvasEl.getContext('2d');
-const confNum = Math.floor(w / 5);
-const confs = new Array(confNum).fill().map(_ => new Confetti());
-
+var ctx = canvasEl.getContext('2d');
+var confNum = Math.floor(w / 5);
+//var confs = new Array(confNum).fill().map(_ => new Confetti());
+var confs = [];
+for(var i = 0; i < confNum; i++)
+  confs.push(new Confetti());
 loop();
 
         
