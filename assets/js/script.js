@@ -64,8 +64,8 @@ $(document).ready(function(){
 
 var canvasEl = document.querySelector('#canvas');
 
-var w = canvasEl.width = window.innerWidth;
-var h = canvasEl.height = window.innerHeight * 2;
+var w = canvasEl.width = $(".showcase").innerWidth();
+var h = canvasEl.height = $(".showcase").innerHeight();
 
 function loop() {
   ctx.clearRect(0,0,w,h);
@@ -130,8 +130,9 @@ var confNum = Math.floor(w / 5);
 var confs = [];
 for(var i = 0; i < confNum; i++)
   confs.push(new Confetti());
-loop();
-
+window.onload = function() {
+  requestAnimationFrame(loop);
+};
         
       /*$(document).on("click", function(e){
         if($(e.toElement).hasClass("navbar-mobile") ||
