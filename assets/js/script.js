@@ -3,6 +3,8 @@ $(document).ready(function(){
         $(".navbar-mobile").toggleClass("shown");
         $(".mask").toggle();
       });
+
+      
       // $(".navbar-mobile__nav__item__link").click(function(event){
       //   event.preventDefault();
       //   $('html,body').animate({
@@ -60,13 +62,18 @@ $(document).ready(function(){
       });
 });
 
+
+
+
+
+// Canvas
 var canvasEl = document.getElementById('canvas');
 
-var w = canvasEl.width = $(".showcase").innerWidth(),
-    h = canvasEl.height = $(".showcase").innerHeight();
+var w = canvasEl.width = $(".showcase").outerHeight(),
+    h = canvasEl.height = $(".showcase").outerHeight();
 function loop() {
-  w = canvasEl.width = $(".showcase").innerWidth();
-  h = canvasEl.height = $(".showcase").innerHeight();
+  w = canvasEl.width = $(".showcase").outerHeight();
+  h = canvasEl.height = $(".showcase").outerHeight();
 
   ctx.clearRect(0,0,w,h);
   
@@ -133,7 +140,11 @@ for(var i = 0; i < confNum; i++)
 window.onload = function() {
   requestAnimationFrame(loop);
 };
-        
+
+
+
+
+
       /*$(document).on("click", function(e){
         if($(e.toElement).hasClass("navbar-mobile") ||
               $(e.toElement).hasClass("menu-toggle") ||
