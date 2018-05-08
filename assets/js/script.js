@@ -63,16 +63,68 @@ $(document).ready(function(){
 });
 
 
+// Scroll
+$(".navbar-mobile__nav__item__link, .arrow-link").click(function(e){
+  e.preventDefault(); //nao usar o 'teleporte' padrao do html
+  var id = $(this).attr('href'), // attr puxa o atributo q vc quer
+      targetOffset = $(id).offset().top; // pegar distancia do topo
+      console.log(id, targetOffset);
+  $('html, body').animate({
+    scrollTop: targetOffset //animar o scrolltop para o local da div
+  }, 500);
+});
 
+// Debounce do Lodash: evita que a func seja chamada varias vezes a cada pequeno scroll
+debounce = function(func, wait, immediate){
+  var timeout;
+  return function(){
+    var context = this, args = arguments;
+    var later = function(){
+      timeout = null;
+      if(!immediate) func.apply(context, args);
+    };
+
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if(callNow) func.apply(context, args);
+  };
+};
+
+
+// Anime div when scrolling
+(function(){ // evitar conflito tornando variaveis locais, apenas para essa funcao 
+  var $target = $('.animate-right'), //seleciona as classes que quer animar
+      animationClass = 'animate-right-start',
+      offset = $(window).height() * 3/4; // nunca deixar mais do que 3/4 da janela em branco
+  function animateScroll(){
+    var distDocumentTop = $(document).scrollTop(); 
+    $target.each(function(){
+      var distItemTop = $(this).offset().top;
+      if(distDocumentTop > distItemTop - offset){
+        $(this).addClass(animationClass);
+      } else{
+        $(this).removeClass(animationClass);
+      }
+    });
+  }
+  animateScroll(); 
+  // mantem essa ativacao inical pois quando vc entra no site pela primeira
+  // vez vc n da scroll e quando ja tem um item na tela que possa ser animado ele o sera
+
+  $(document).scroll(debounce(function(){
+    animateScroll();
+  }, 50));
+}());
 
 
 // Canvas
 var canvasEl = document.getElementById('canvas');
 
-var w = canvasEl.width = $(".showcase").outerHeight(),
+var w = canvasEl.width = $(".showcase").outerWidth(),
     h = canvasEl.height = $(".showcase").outerHeight();
 function loop() {
-  w = canvasEl.width = $(".showcase").outerHeight();
+  w = canvasEl.width = $(".showcase").outerWidth();
   h = canvasEl.height = $(".showcase").outerHeight();
 
   ctx.clearRect(0,0,w,h);
