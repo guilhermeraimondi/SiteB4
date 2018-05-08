@@ -367,13 +367,17 @@ canvas {
 		
 	}
 }*/
-
 .animate-right{
 	opacity: 0;
-	transform: translate3d(-150px,0,0); /*3d tem performace melhor*/
+	transform: translate3d(-100px,0,0); /*3d tem performace melhor*/
 	transition: .4s ease-in;
 }
-.animate-right-start{
+.animate-top{
+	opacity: 0;
+	transform: translate3d(0,100px,0); /*3d tem performace melhor*/
+	transition: .4s ease-in;
+}
+.animate-start{
 	opacity: 1;
 	transform: translate3d(0,0,0);
 }

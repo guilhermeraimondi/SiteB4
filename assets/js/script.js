@@ -94,8 +94,8 @@ debounce = function(func, wait, immediate){
 
 // Anime div when scrolling
 (function(){ // evitar conflito tornando variaveis locais, apenas para essa funcao 
-  var $target = $('.animate-right'), //seleciona as classes que quer animar
-      animationClass = 'animate-right-start',
+  var $target = $('.animate-top, .animate-right'), //seleciona as classes que quer animar
+      animationClass = 'animate-start',
       offset = $(window).height() * 3/4; // nunca deixar mais do que 3/4 da janela em branco
   function animateScroll(){
     var distDocumentTop = $(document).scrollTop(); 
