@@ -370,17 +370,17 @@ canvas {
 .animate-left{
 	opacity: 0;
 	transform: translate3d(100px,0,0); /*3d tem performace melhor*/
-	transition: .3s ease-in;
+	transition: .4s;
 }
 .animate-right{
 	opacity: 0;
 	transform: translate3d(-100px,0,0); /*3d tem performace melhor*/
-	transition: .3s ease-in;
+	transition: .4s;
 }
 .animate-top{
 	opacity: 0;
 	transform: translate3d(0,100px,0); /*3d tem performace melhor*/
-	transition: .3s ease-in;
+	transition: .4s;
 }
 .animate-start{
 	opacity: 1;
