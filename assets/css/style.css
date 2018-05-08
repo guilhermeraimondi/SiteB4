@@ -399,8 +399,6 @@ canvas {
 	top: 2.2%;
 	background-color: #000;
 	z-index: 500;
-	transition: all 1s;
-	box-shadow: -.1rem .15rem .1rem rgba(50,50,50,.3);
 }
 .menu-toggle:hover{
 	color: #67dea3;
@@ -441,7 +439,7 @@ canvas {
     transition: opacity 3s;*/
     /*animation: moveToRight .7s;*/
     box-sizing: inherit;
-    transition: 0.6s all ease;
+    transition: 0.4s all;
 }
 .navbar-mobile.shown {
 	margin-right: 0;

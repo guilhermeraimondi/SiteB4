@@ -96,7 +96,7 @@ debounce = function(func, wait, immediate){
 (function(){ // evitar conflito tornando variaveis locais, apenas para essa funcao 
   var $target = $('.animate-top, .animate-right'), //seleciona as classes que quer animar
       animationClass = 'animate-start',
-      offset = $(window).height() * 3/4; // nunca deixar mais do que 3/4 da janela em branco
+      offset = $(window).height() * 5/6; // nunca deixar mais do que 3/4 da janela em branco
   function animateScroll(){
     var distDocumentTop = $(document).scrollTop(); 
     $target.each(function(){
