@@ -61,7 +61,7 @@ LOADING BAR - AJAX
 }
 
 /*
-MENU P
+MENU
 */
 .display-50{
 	font-size: 1.94rem;
@@ -122,9 +122,9 @@ MENU P
     html {
     	font-size: 120%;
   	}
-  	.img-passos{
+  	/*.img-passos{
   		margin-left: 2rem;
-  	}
+  	}*/
   	.descrip-title{
   		text-align: left;
   	}
@@ -142,10 +142,6 @@ MENU P
 		font-size: 125%;
 	}
 }
-.description{
-	/*background-color: #f0f0f0;*/
-	padding: 5rem 0;
-}
 .testimonial{
 	background-color: #e6e6e6;
     color: #757575;
@@ -161,10 +157,12 @@ MENU P
 	width: 350px !important;
 }
 .btn-square{
-	width: 100%;
-	padding: .5rem;
-	border: 1px solid black;
-	margin-bottom: 1rem;
+    color: #fe9200;
+    width: 100%;
+    padding: .5rem;
+    border: 1.4px solid #fe9200;
+    margin-bottom: 1rem;
+    border-radius: 4px;
 }
 
 .btn-grad{
@@ -232,11 +230,11 @@ MENU P
     border-color: rgba(27,31,35,0.5);
 }
 .home__content{
-	z-index: 300;
+	z-index: 500;
 }
 canvas {
 	position: absolute;
-	z-index: 200;
+	z-index: 100;
 }
 
 
@@ -284,7 +282,7 @@ canvas {
 	color: #03b070;
 }
 .text-orange{
-	color: #ffaf6f;
+	color: #fe9200;
 }
 .text-red{
 	color: #f04570;
@@ -333,6 +331,9 @@ canvas {
 }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: #67dea3;
+}
+.owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 2rem;
 }
 .hide{
 	display: none;
@@ -530,13 +531,10 @@ canvas {
 	margin: 0 auto 1.5rem auto;
 }
 .img-passos-maior{
-	max-width: 17rem;
+	max-width: 100%;
 }
 .section{
-	padding: 3rem 0 2rem 0;
-}
-.small-section{
-	padding: 4.5rem 0 4.5rem 0;
+	padding: 4.5rem 0;
 }
 .brand{
 	height: 2rem;
@@ -570,13 +568,14 @@ canvas {
 
 
 /* ---------------- PASSOS ---------------- */
-.passos__itens{
-	list-style: none;
-	padding: 0;
+
+.passos{
+	margin: 2rem 1rem 1rem 1rem;
+	
 }
-.passos__itens__item{
+/*.passos__itens__item{
 	margin-top: 5rem;
-}
+}*/
 .circle-icon{
 	width: 70px;
     height: 70px;
@@ -638,14 +637,11 @@ canvas {
     color: white;
 }
 .arrow{
-	padding: 0;
-	text-align: center;
-    /*width: 100%;*/
-    width: 40px;
+    text-align: center;
+    width: 100%;
     top: 90%;
-    margin: 0 auto; 
     position: absolute;
-    right: calc(50% - 1.25rem);
+    right: 0;
     font-size: 2.5rem;
 }
 .bounce {
