@@ -33,6 +33,21 @@ body{
 	box-sizing: border-box;
 }
 
+.preload{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3000;
+	background-color: #15b983;
+	background-image: linear-gradient(to right, #15B957, #1560B9);
+}
+#loader{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
 /*
 LOADING BAR - AJAX
 */
