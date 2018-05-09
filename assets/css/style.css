@@ -43,10 +43,8 @@ body{
 	z-index: 3000;
 	background-color: #15b983;
 	background-image: linear-gradient(to right, #15B957, #1560B9);
-	background-color: #262626;
 }
 #loader{
-	background-color: #262626;
 	position: fixed;
 	z-index: 3010;
 	top: 0;
