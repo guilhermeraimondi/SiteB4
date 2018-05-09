@@ -147,6 +147,7 @@ function easeIn(t) {
         step = (step + 1) % 4;
       }, 220);
     });
+
 // window.onload = funcion(){
   
 // };
@@ -273,83 +274,82 @@ debounce = function(func, wait, immediate){
 
 // Canvas
 $(function(){
-var canvasEl = document.getElementById('canvas');
+  var canvasEl = document.getElementById('canvas');
 
-var w = canvasEl.width = $(".showcase").outerWidth(),
+  var w = canvasEl.width = $(".showcase").outerWidth(),
+      h = canvasEl.height = $(".showcase").outerHeight();
+  function loop() {
+    w = canvasEl.width = $(".showcase").outerWidth();
     h = canvasEl.height = $(".showcase").outerHeight();
-function loop() {
-  w = canvasEl.width = $(".showcase").outerWidth();
-  h = canvasEl.height = $(".showcase").outerHeight();
 
-  ctx.clearRect(0,0,w,h);
-  
-  confs.forEach(function (conf){
-    conf.update();
-    conf.draw();
-  });
-  requestAnimationFrame(loop);
-}
-
-function Confetti () {
-  //varruct confetti
-  var colours = ['#fde132', '#009bde', '#ff6b00'];
-  
-  this.x = Math.round(Math.random(10) * w);
-  this.y = Math.round(Math.random(10) * h)-(h/2);
-  this.rotation = Math.random(10)*360;
-
-  var size = Math.random(10)*(w/60);
-  this.size = size < 15 ? 15 : size;
-
-  this.color = colours[Math.round(Math.random(colours.length)*10-1)]
-
-  this.speed = this.size/7;
-  
-  this.opacity = Math.random(10);
-
-  this.shiftDirection = Math.random(10) > 0.5 ? 1 : -1;
-}
-
-Confetti.prototype.border = function() {
-  if (this.y >= h) {
-    this.y = h;
-  }
-}
-
-Confetti.prototype.update = function() {
-  this.y += this.speed;
-  
-  if (this.y <= h) {
-    this.x += this.shiftDirection/5;
-    this.rotation += this.shiftDirection*this.speed/100;
+    ctx.clearRect(0,0,w,h);
+    
+    confs.forEach(function (conf){
+      conf.update();
+      conf.draw();
+    });
+    requestAnimationFrame(loop);
   }
 
-  this.border();
-};
+  function Confetti () {
+    //varruct confetti
+    var colours = ['#fde132', '#009bde', '#ff6b00'];
+    
+    this.x = Math.round(Math.random(10) * w);
+    this.y = Math.round(Math.random(10) * h)-(h/2);
+    this.rotation = Math.random(10)*360;
 
-Confetti.prototype.draw = function() {
-  ctx.beginPath();
-  ctx.arc(this.x, this.y, this.size, this.rotation, this.rotation+(Math.PI/2));
-  ctx.lineTo(this.x, this.y);
-  ctx.closePath();
-  ctx.globalAlpha = this.opacity;
-  ctx.fillStyle = this.color;
-  ctx.fill();
-};
+    var size = Math.random(10)*(w/60);
+    this.size = size < 15 ? 15 : size;
 
-var ctx = canvasEl.getContext('2d');
-var confNum = Math.floor(w / 5);
-//var confs = new Array(confNum).fill().map(_ => new Confetti());
-var confs = [];
-for(var i = 0; i < confNum; i++)
-  confs.push(new Confetti());
+    this.color = colours[Math.round(Math.random(colours.length)*10-1)]
+
+    this.speed = this.size/7;
+    
+    this.opacity = Math.random(10);
+
+    this.shiftDirection = Math.random(10) > 0.5 ? 1 : -1;
+  }
+
+  Confetti.prototype.border = function() {
+    if (this.y >= h) {
+      this.y = h;
+    }
+  }
+
+  Confetti.prototype.update = function() {
+    this.y += this.speed;
+    
+    if (this.y <= h) {
+      this.x += this.shiftDirection/5;
+      this.rotation += this.shiftDirection*this.speed/100;
+    }
+
+    this.border();
+  };
+
+  Confetti.prototype.draw = function() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, this.rotation, this.rotation+(Math.PI/2));
+    ctx.lineTo(this.x, this.y);
+    ctx.closePath();
+    ctx.globalAlpha = this.opacity;
+    ctx.fillStyle = this.color;
+    ctx.fill();
+  };
+
+  var ctx = canvasEl.getContext('2d');
+  var confNum = Math.floor(w / 5);
+  //var confs = new Array(confNum).fill().map(_ => new Confetti());
+  var confs = [];
+  for(var i = 0; i < confNum; i++)
+    confs.push(new Confetti());
+  window.onload = function() {
+    requestAnimationFrame(loop);
+    $(".preload").fadeOut(200);
+  };
 });
 
-window.onload = function() {
-  $("#loader").fadeOut(200);
-  $(".preload").fadeOut(200);
-  requestAnimationFrame(loop);
-};
 
 
 
