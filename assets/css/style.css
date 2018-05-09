@@ -623,7 +623,7 @@ canvas {
 .card-icon{
 	position: absolute;
 	bottom: 1.5%;
-	left: 30%;
+	width: 100%;
 }
 .youtube-icon{
 	display: inline-block;
@@ -638,9 +638,10 @@ canvas {
     color: white;
 }
 .arrow{
+	padding: 0;
 	text-align: center;
-	  /*margin: 8% 0;*/
-    width: 30px;
+    /*width: 100%;*/
+    width: 40px;
     top: 90%;
     margin: 0 auto; 
     position: absolute;
