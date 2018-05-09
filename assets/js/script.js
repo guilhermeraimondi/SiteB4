@@ -347,6 +347,7 @@ for(var i = 0; i < confNum; i++)
 
 window.onload = function() {
   $("#loader").fadeOut(200);
+  $(".preload").fadeOut(200);
   requestAnimationFrame(loop);
 };
 
