@@ -11,7 +11,7 @@ function easeIn(t) {
         return easeOut( (t - 0.5)*2 ) / 2 + 0.5;
       }
     }
-    (function(){
+    $(function(){
       var SIZE = 60,
         MARGIN = 20;
 
@@ -145,7 +145,7 @@ function easeIn(t) {
           break;
         }
         step = (step + 1) % 4;
-      }, 250);
+      }, 220);
     });
 // window.onload = funcion(){
   
@@ -272,6 +272,7 @@ debounce = function(func, wait, immediate){
 
 
 // Canvas
+$(function(){
 var canvasEl = document.getElementById('canvas');
 
 var w = canvasEl.width = $(".showcase").outerWidth(),
@@ -342,6 +343,8 @@ var confNum = Math.floor(w / 5);
 var confs = [];
 for(var i = 0; i < confNum; i++)
   confs.push(new Confetti());
+});
+
 window.onload = function() {
   $("#loader").fadeOut(200);
   requestAnimationFrame(loop);
