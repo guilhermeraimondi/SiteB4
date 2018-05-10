@@ -14,7 +14,7 @@ function easeInOut(t) {
 var isPageLoaded = false;
 $(function(){
   (function(){
-    var SIZE = 60,
+    var SIZE = 40,
         MARGIN = 20,
         SPEED = 220;
 
@@ -158,13 +158,13 @@ $(function(){
 
   // Canvas
   (function(){
-    var canvasEl = document.getElementById('canvas');
+    var canvasEl = document.getElementById('confete');
 
-    var w = canvasEl.width = $(".showcase").outerWidth(),
-        h = canvasEl.height = $(".showcase").outerHeight();
+    var w = canvasEl.width = $(".hero").outerWidth(),
+        h = canvasEl.height = $(".hero").outerHeight();
     function loop() {
-      w = canvasEl.width = $(".showcase").outerWidth();
-      h = canvasEl.height = $(".showcase").outerHeight();
+      w = canvasEl.width = $(".hero").outerWidth();
+      h = canvasEl.height = $(".hero").outerHeight();
 
       ctx.clearRect(0,0,w,h);
       
@@ -232,7 +232,6 @@ $(function(){
       setTimeout(function(){
         requestAnimationFrame(loop);
         $(".preload").fadeOut(200);
-        console.log("removeu");
         isPageLoaded = true;
       }, 0);
     };
@@ -270,24 +269,36 @@ $(document).ready(function(){
   var lastScroll = 0;
   $(window).scroll(function(){
     var currentScroll = $(this).scrollTop();
-    var homeHeight = $(".showcase").innerHeight();
+    var distMenuTopo = $(".menu-toggle").offset().top;
+    var homeHeight = $(".hero").innerHeight();
     var isGoingUp = true;
     var limit = homeHeight - $(".back2top").position().top;
     if(currentScroll > lastScroll)
       isGoingUp = false;
 
-    if(isGoingUp && currentScroll > limit + 20)
+    if(isGoingUp && currentScroll > limit + 20){
       $(".back2top").addClass("shown");
-    if(!isGoingUp || currentScroll < limit - 20)
+    }
+    if(!isGoingUp || currentScroll < limit - 20){
       $(".back2top").removeClass("shown");
+    }
+    // if(currentScroll < limit - 20)){
+    //   $(".menu-toggle").css("top", "20px");
+    // }
+
 
     if(isGoingUp)
       $(".menu-toggle").addClass("shown");
     else
       $(".menu-toggle").removeClass("shown");
 
-    
     lastScroll = currentScroll;
+
+    if(distMenuTopo > homeHeight-100){
+      $(".menu-toggle").addClass("menu-no-meio");
+    } else{
+      $(".menu-toggle").removeClass("menu-no-meio");
+    }
   });
       
       // $(".navbar-mobile__nav__item__link").click(function(event){
@@ -331,14 +342,14 @@ $(document).ready(function(){
         autoplayHoverPause:true,
         autoHeight: false
       });
-      owl1.on('mousewheel', '.owl-stage', function (e) {
-        if (e.deltaY>0) {
-          owl1.trigger('next.owl');
-        } else {
-          owl1.trigger('prev.owl');
-        }
-        e.preventDefault();
-      });
+      // owl1.on('mousewheel', '.owl-stage', function (e) {
+      //   if (e.deltaY>0) {
+      //     owl1.trigger('next.owl');
+      //   } else {
+      //     owl1.trigger('prev.owl');
+      //   }
+      //   e.preventDefault();
+      // });
 
       var owl2 = $('.owl3').owlCarousel({
          responsive:{
