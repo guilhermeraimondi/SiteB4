@@ -1,171 +1,214 @@
 function easeIn(t) {
-      return t * t * t;
-    }
-    function easeOut(t) {
-      return 1 - (1-t) * (1-t) * (1-t);
-    }
-    function easeInOut(t) {
-      if(t <= 0.5) {
-        return easeIn(t*2)/2;
-      }else{
-        return easeOut( (t - 0.5)*2 ) / 2 + 0.5;
-      }
-    }
-    $(function(){
-      var SIZE = 60,
-        MARGIN = 20;
+  return t * t * t;
+}
+function easeOut(t) {
+  return 1 - (1-t) * (1-t) * (1-t);
+}
+function easeInOut(t) {
+  if(t <= 0.5) {
+    return easeIn(t*2)/2;
+  }else{
+    return easeOut( (t - 0.5)*2 ) / 2 + 0.5;
+  }
+}
+var isPageLoaded = false;
+$(function(){
+  var SIZE = 60,
+      MARGIN = 20;
 
-      var canvas = document.getElementById("loader"),
-        ctx = canvas.getContext("2d");
+  var canvas = document.getElementById("loader"),
+    ctx = canvas.getContext("2d");
 
-      var isGoingRight = true,
-        step = 0,
-        lastId = 1;
+  var isGoingRight = true,
+    step = 0,
+    lastId = 1;
 
-      function Square(x, y) {
-        this.id = lastId++;
-        this.prevX = x;
-        this.prevY = y;
-        this.nextX = x;
-        this.nextY = y;
-        this.x = x;
-        this.y = y;
-        this.animation = 0;
+  function Square(x, y) {
+    this.id = lastId++;
+    this.prevX = x;
+    this.prevY = y;
+    this.nextX = x;
+    this.nextY = y;
+    this.x = x;
+    this.y = y;
+    this.animation = 0;
 
-        Square.squares.push(this);
-      }
-      Square.squares = [];
-      Square.prototype.animate = function() {
-        this.animation = Math.min(this.animation + 0.05, 1);
-        var t = easeInOut(this.animation);
+    Square.squares.push(this);
+  }
+  Square.squares = [];
+  Square.prototype.animate = function() {
+    this.animation = Math.min(this.animation + 0.05, 1);
+    var t = easeInOut(this.animation);
 
-        this.x = this.prevX + (this.nextX - this.prevX) * t;
-        this.y = this.prevY + (this.nextY - this.prevY) * t;
+    this.x = this.prevX + (this.nextX - this.prevX) * t;
+    this.y = this.prevY + (this.nextY - this.prevY) * t;
 
-        return this;
-      };
-      Square.prototype.draw = function(_ctx) {
-        var x = (canvas.width / 2) + (MARGIN / 2) +(SIZE*this.x) - (SIZE*2);
-        var y = (canvas.height / 2) + (MARGIN / 2) + (SIZE*this.y) - (SIZE*2);
-        _ctx.clearRect(x, y, SIZE - (MARGIN / 2), SIZE - (MARGIN / 2));
-      };
+    return this;
+  };
+  Square.prototype.draw = function(_ctx) {
+    var x = (canvas.width / 2) + (MARGIN / 2) +(SIZE*this.x) - (SIZE*2);
+    var y = (canvas.height / 2) + (MARGIN / 2) + (SIZE*this.y) - (SIZE*2);
+    _ctx.clearRect(x, y, SIZE - (MARGIN / 2), SIZE - (MARGIN / 2));
+  };
 
-      new Square(0, 1);
-      new Square(1, 1);
-      new Square(2, 1);
-      new Square(3, 1);
+  new Square(0, 1);
+  new Square(1, 1);
+  new Square(2, 1);
+  new Square(3, 1);
 
-      new Square(0, 0);
-      function loop() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+  new Square(0, 0);
+  function loop() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-        ctx.fillStyle = "#232323";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        for(var i = 0; i < Square.squares.length; i++)
-          Square.squares[i].animate().draw(ctx);
-
-        requestAnimationFrame(loop);
-      }
-      requestAnimationFrame(loop);
-
-      setInterval(function(){
-        for(var i = 0; i < Square.squares.length; i++){
-          var target = Square.squares[i];
-          target.animation = 0;
-          target.x = target.nextX;
-          target.y = target.nextY;
-
-          target.prevX = target.nextX;
-          target.prevY = target.nextY;
-        }
-        switch(step) {
-          case 0:
-            var target = null;
-
-            for(var i = 0; i < Square.squares.length; i++)
-              if(Square.squares[i].nextY == 0)
-                target = Square.squares[i];
-
-            target.nextY += 1;
-
-            for(var i = 0; i < Square.squares.length; i++){
-              if(Square.squares[i].nextX == target.nextX &&
-                  Square.squares[i].nextY == target.nextY && Square.squares[i].id != target.id){
-                target = Square.squares[i];
-                break;
-              }
-            }
-
-            target.nextY += 1;
-            if(!isGoingRight && target.nextX == 0)
-              isGoingRight = true;
-          break;
-
-          case 1:
-            var target = null;
-
-            for(var i = 0; i < Square.squares.length; i++)
-              if(Square.squares[i].nextY == 2)
-                target = Square.squares[i];
-
-            target.nextX += isGoingRight ? 1 : -1;
-          break;
-
-          case 2:
-            var target = null;
-
-            for(var i = 0; i < Square.squares.length; i++)
-              if(Square.squares[i].nextY == 2)
-                target = Square.squares[i];
-
-            target.nextY -= 1;
-
-            for(var i = 0; i < Square.squares.length; i++){
-              if(Square.squares[i].nextX == target.nextX &&
-                  Square.squares[i].nextY == target.nextY && Square.squares[i].id != target.id){
-                target = Square.squares[i];
-                break;
-              }
-            }
-
-            if(target.nextX == 3)
-              isGoingRight = false;
-            target.nextY -= 1;
-          break;
-
-          case 3:
-            var target = null;
-
-            for(var i = 0; i < Square.squares.length; i++)
-              if(Square.squares[i].nextY == 0)
-                target = Square.squares[i];
-
-            target.nextX += isGoingRight ? 1 : -1;
-          break;
-        }
-        step = (step + 1) % 4;
-      }, 220);
-    });
-
-// window.onload = funcion(){
+    ctx.fillStyle = "#232323";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    for(var i = 0; i < Square.squares.length; i++)
+      Square.squares[i].animate().draw(ctx);
   
-// };
+    $("#loader").css("background-color", "transparent");
+    if(!isPageLoaded)
+      requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
 
+  setInterval(function(){
+    for(var i = 0; i < Square.squares.length; i++){
+      var target = Square.squares[i];
+      target.animation = 0;
+      target.x = target.nextX;
+      target.y = target.nextY;
+
+      target.prevX = target.nextX;
+      target.prevY = target.nextY;
+    }
+    switch(step) {
+      case 0:
+        var target = null;
+
+        for(var i = 0; i < Square.squares.length; i++)
+          if(Square.squares[i].nextY == 0)
+            target = Square.squares[i];
+
+        target.nextY += 1;
+
+        for(var i = 0; i < Square.squares.length; i++){
+          if(Square.squares[i].nextX == target.nextX &&
+              Square.squares[i].nextY == target.nextY && Square.squares[i].id != target.id){
+            target = Square.squares[i];
+            break;
+          }
+        }
+
+        target.nextY += 1;
+        if(!isGoingRight && target.nextX == 0)
+          isGoingRight = true;
+      break;
+
+      case 1:
+        var target = null;
+
+        for(var i = 0; i < Square.squares.length; i++)
+          if(Square.squares[i].nextY == 2)
+            target = Square.squares[i];
+
+        target.nextX += isGoingRight ? 1 : -1;
+      break;
+
+      case 2:
+        var target = null;
+
+        for(var i = 0; i < Square.squares.length; i++)
+          if(Square.squares[i].nextY == 2)
+            target = Square.squares[i];
+
+        target.nextY -= 1;
+
+        for(var i = 0; i < Square.squares.length; i++){
+          if(Square.squares[i].nextX == target.nextX &&
+              Square.squares[i].nextY == target.nextY && Square.squares[i].id != target.id){
+            target = Square.squares[i];
+            break;
+          }
+        }
+
+        if(target.nextX == 3)
+          isGoingRight = false;
+        target.nextY -= 1;
+      break;
+
+      case 3:
+        var target = null;
+
+        for(var i = 0; i < Square.squares.length; i++)
+          if(Square.squares[i].nextY == 0)
+            target = Square.squares[i];
+
+        target.nextX += isGoingRight ? 1 : -1;
+      break;
+    }
+    step = (step + 1) % 4;
+  }, 220);
+});
+
+// Toggle navbar
 $(document).ready(function(){
       $(".navbar-mobile__btn-close, .mask, .menu-toggle, .btn-outline-ligther, .navbar-mobile__nav__item__link").click(function(){
         $(".navbar-mobile").toggleClass("shown");
         $(".mask").toggle();
       });
 
+  /*var lastScroll = 0;
+  $(window).scroll(function(){
+    var currentScroll = $(this).scrollTop();
+    var homeHeight = $(".showcase").innerHeight();
+
+    if(currentScroll < lastScroll){
+      // scroll pra cima
+      $(".menu-toggle").addClass("shown");
+      console.log("mostrar");
+      $(".back2top").addClass("shown");
+    } else{
+      $(".menu-toggle").removeClass("shown");
+      console.log("esconder");
+      $(".back2top").removeClass("shown");
+    }
+    lastScroll = currentScroll;
+    if(currentScroll < homeHeight - $(".back2top").position().top){
+      $(".back2top").removeClass("shown");
+    }
+
+  });*/
+  var lastScroll = 0;
+  $(window).scroll(function(){
+    var currentScroll = $(this).scrollTop();
+    var homeHeight = $(".showcase").innerHeight();
+    var isGoingUp = true;
+    var limit = homeHeight - $(".back2top").position().top;
+    if(currentScroll > lastScroll)
+      isGoingUp = false;
+
+    if(isGoingUp && currentScroll > limit + 20)
+      $(".back2top").addClass("shown");
+    if(!isGoingUp || currentScroll < limit - 20)
+      $(".back2top").removeClass("shown");
+
+    if(isGoingUp)
+      $(".menu-toggle").addClass("shown");
+    else
+      $(".menu-toggle").removeClass("shown");
+
+    
+    lastScroll = currentScroll;
+  });
       
       // $(".navbar-mobile__nav__item__link").click(function(event){
       //   event.preventDefault();
       //   $('html,body').animate({
       //     scrollTop:$(this.hash).offset().top}, 1000);
       // });
-
-      $('.owl1').owlCarousel({
+      var owl1 = $(".owl1");
+      owl1.owlCarousel({
         responsive:{
           items:1,
           0:{
@@ -200,6 +243,14 @@ $(document).ready(function(){
         autoplayHoverPause:true,
         autoHeight: false
       });
+      owl1.on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY>0) {
+          owl1.trigger('next.owl');
+        } else {
+          owl1.trigger('prev.owl');
+        }
+        e.preventDefault();
+      });
 
       var owl2 = $('.owl3').owlCarousel({
          responsive:{
@@ -217,15 +268,15 @@ $(document).ready(function(){
 });
 
 
-// Scroll
-$(".navbar-mobile__nav__item__link, .arrow-link").click(function(e){
+// Ease Scroll
+$(".navbar-mobile__nav__item__link, .arrow-link, .back2top-link").click(function(e){
   e.preventDefault(); //nao usar o 'teleporte' padrao do html
   var id = $(this).attr('href'), // attr puxa o atributo q vc quer
       targetOffset = $(id).offset().top; // pegar distancia do topo
       console.log(id, targetOffset);
   $('html, body').animate({
     scrollTop: targetOffset //animar o scrolltop para o local da div
-  }, 500);
+  }, 700);
 });
 
 // Debounce do Lodash: evita que a func seja chamada varias vezes a cada pequeno scroll
@@ -244,7 +295,6 @@ debounce = function(func, wait, immediate){
     if(callNow) func.apply(context, args);
   };
 };
-
 
 // Anime div when scrolling
 (function(){ // evitar conflito tornando variaveis locais, apenas para essa funcao 
@@ -345,8 +395,11 @@ $(function(){
   for(var i = 0; i < confNum; i++)
     confs.push(new Confetti());
   window.onload = function() {
-    requestAnimationFrame(loop);
-    $(".preload").fadeOut(200);
+    setTimeout(function(){
+      requestAnimationFrame(loop);
+      $(".preload").fadeOut(200);
+      isPageLoaded = true;
+    }, 0);
   };
 });
 
