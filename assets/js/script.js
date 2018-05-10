@@ -231,6 +231,7 @@ $(function(){
     window.onload = function() {
       setTimeout(function(){
         requestAnimationFrame(loop);
+        console.log("saiu");
         $(".preload").fadeOut(200);
         isPageLoaded = true;
       }, 0);
