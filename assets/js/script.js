@@ -280,10 +280,10 @@ $(document).ready(function(){
     if(currentScroll > lastScroll)
       isGoingUp = false;
 
-    if(isGoingUp && currentScroll > limit + 20){
+    if(isGoingUp && currentScroll > limit + 20 && currentScroll >= 0){
       $(".back2top").addClass("shown");
     }
-    if(!isGoingUp || currentScroll < limit - 20){
+    if((!isGoingUp || currentScroll < limit - 20) && currentScroll >= 0){
       $(".back2top").removeClass("shown");
     }
     // if(currentScroll < limit - 20)){
@@ -298,7 +298,7 @@ $(document).ready(function(){
 
     lastScroll = currentScroll;
 
-    if(distMenuTopo > homeHeight-100){
+    if(distMenuTopo > (homeHeight * 0.6 - 23)){
       $(".menu-toggle").addClass("menu-no-meio");
     } else{
       $(".menu-toggle").removeClass("menu-no-meio");
