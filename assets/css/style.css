@@ -403,17 +403,20 @@ body{
 .owl-theme .owl-nav.disabled + .owl-dots {
     margin-top: 2rem;
 }
-
+.main{
+	display: none;
+}
 
 /*
 4. FIXED BUTTONS
 */
 .menu-toggle{
-	margin-right: -45px;
+	margin-right: -70px;
 	width:45px;
 	cursor: pointer;
 	outline: none;
 	border:none;
+	box-shadow: -1px 3px 7px #000000ba;
 	font-size: 25px;
 	position: fixed;
 	/*border-bottom-left-radius: 7px;*/
@@ -436,11 +439,12 @@ body{
 	opacity: .5;
 }
 .back2top{
-	margin-right: -45px;
+	margin-right: -70px;
 	width:45px;
 	cursor: pointer;
 	outline: none;
 	border:none;
+	box-shadow: -1px 3px 7px #000000ba;
 	font-size: 25px;
 	position: fixed;
 	border-bottom-left-radius: 7px;

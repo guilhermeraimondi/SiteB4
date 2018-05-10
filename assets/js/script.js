@@ -233,6 +233,9 @@ $(function(){
         requestAnimationFrame(loop);
         console.log("saiu");
         $(".preload").fadeOut(200);
+        $("#loader").fadeOut(200);
+        $("main").css("display", "initial");
+        $("main").fadeIn;
         isPageLoaded = true;
       }, 0);
     };
