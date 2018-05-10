@@ -398,6 +398,7 @@ $(function(){
     setTimeout(function(){
       requestAnimationFrame(loop);
       $(".preload").fadeOut(200);
+      console.log("removeu");
       isPageLoaded = true;
     }, 0);
   };
