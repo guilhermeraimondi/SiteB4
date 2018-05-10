@@ -15,14 +15,16 @@ var isPageLoaded = false;
 $(function(){
   (function(){
     var SIZE = 60,
-        MARGIN = 20;
+        MARGIN = 20,
+        SPEED = 220;
 
     var canvas = document.getElementById("loader"),
-      ctx = canvas.getContext("2d");
+        ctx = canvas.getContext("2d");
 
     var isGoingRight = true,
-      step = 0,
-      lastId = 1;
+        step = 0,
+        lastId = 1,
+        lastMove = Date.now();
 
     function Square(x, y) {
       this.id = lastId++;
@@ -38,7 +40,8 @@ $(function(){
     }
     Square.squares = [];
     Square.prototype.animate = function() {
-      this.animation = Math.min(this.animation + 0.05, 1);
+      //this.animation = Math.min(this.animation + 0.05, 1);
+      this.animation = (Date.now() - lastMove) / SPEED;
       var t = easeInOut(this.animation);
 
       this.x = this.prevX + (this.nextX - this.prevX) * t;
@@ -74,6 +77,7 @@ $(function(){
     requestAnimationFrame(loop);
 
     setInterval(function(){
+      lastMove = Date.now();
       for(var i = 0; i < Square.squares.length; i++){
         var target = Square.squares[i];
         target.animation = 0;
@@ -149,7 +153,7 @@ $(function(){
         break;
       }
       step = (step + 1) % 4;
-    }, 220);
+    }, SPEED);
   })();
 
   // Canvas
