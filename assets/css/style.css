@@ -34,6 +34,7 @@ html{
 	font-size: 90%; /*deixa o ususario dar zoom na pag*/
 }
 body{
+	font-family: 'Marcellus SC', serif !important;
 	box-sizing: border-box;
 }
 @media only screen and (min-width: 321px){
@@ -76,12 +77,20 @@ body{
 	}
 }
 .btn-square{
-    color: #fe9200;
+	/*font-weight: bold;*/
+	font-size: 1.2rem;
+    background-image: linear-gradient(to right, rgb(255, 145, 1), #ffec07d1);
+    -webkit-background-clip: text;
+    color: transparent;
     width: 100%;
     padding: .5rem;
-    border: 1.4px solid #fe9200;
+    border: 1.4px solid rgb(255, 186, 47);
     margin-bottom: 1rem;
     border-radius: 4px;
+}
+.btn-square:hover{
+	color: white;
+	background: linear-gradient(to right, rgba(255, 145, 1, 0.82), #ffec07d1);
 }
 
 .btn-grad{
@@ -191,8 +200,12 @@ body{
 .text-dark-green{
 	color: #03b070;
 }
-.text-orange{
-	color: #fe9200;
+.text-rainbow{
+	background-image: -webkit-linear-gradient(left, #40e0d0, #ff8c00, #ff0080);  Chrome 10-25, Safari 5.1-6 
+	background-image: -o-linear-gradient(left, #40e0d0, #ff8c00, #ff0080);
+	background-image: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	color: transparent;
 }
 .text-red{
 	color: #f04570;
@@ -201,7 +214,7 @@ body{
 	font-size: .6rem;
 }
 .text-shadow{
-	text-shadow: 1px 2px 3px rgba(0,0,0,1);
+	text-shadow: 0px 0px 15px rgba(0,0,0,0.55);
 }
 .text-shadow-light{
 	text-shadow: .5px .5px .5px rgba(0,0,0,1);
@@ -224,21 +237,34 @@ body{
 	text-align: center;
 	text-transform: uppercase;
 }
+.heading-1st{
+    font-size: 4.5rem;
+    line-height: 4rem;
+        background-image: linear-gradient(to right, rgb(0, 187, 255), rgb(19, 185, 131));
+    -webkit-background-clip: text;
+    color: transparent;
+}
 .heading-2nd{
-	font-size: 2.085rem;
+	font-weight: bold !important;
+	font-size: 3rem;
+	line-height: 3rem;
     font-weight: 500;
-    background-image: linear-gradient(to right, rgb(100, 197, 232), rgba(246, 184, 32, 0.9));
+    background-image: linear-gradient(to right, rgb(0, 187, 255), rgb(19, 185, 131));
     -webkit-background-clip: text;
     color: transparent;
    	margin-bottom: 3rem;
 }
 .heading-3rd{
+	font-weight: bold;
 	margin: 2rem;
 }
 .heading-4th{
+	font-size: 1.6rem;
+	font-weight: bold;
 	margin-bottom: 1.6rem;
 }
 .heading-5th{
+	font-weight: bold;
 	margin-bottom: 1.3rem;
 }
 .hide{
@@ -287,7 +313,8 @@ body{
 .btn-flat {
     border: none;
     border-radius: 5px;
-    background: #15b983;
+    background-image: linear-gradient(to bottom right, rgb(100, 197, 232), rgb(19, 185, 131));
+    /*background: #15b983;*/
     cursor: pointer;
     padding: 15px 80px;
     display: inline-block;
@@ -374,7 +401,6 @@ body{
 }
 .owl-prev span{
 	color: #D6D6D6;
-    text-shadow: 0.5px 0.5px 0.5px rgba(50,50,50,1);
     font-size: 4rem;
 }
 .owl-next{
@@ -384,7 +410,6 @@ body{
 }
 .owl-next span{
 	color: #D6D6D6;
-    text-shadow: 0.5px 0.5px 0.5px rgba(50,50,50,1);
     font-size: 4rem;
 }
 .owl-theme .owl-nav [class*='owl-']:hover{
@@ -398,7 +423,7 @@ body{
 	width: 1.7rem;
 }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-    background: #67dea3;
+    background: #13b988;
 }
 .owl-theme .owl-nav.disabled + .owl-dots {
     margin-top: 2rem;
@@ -487,7 +512,7 @@ body{
 	/*background-image: url(../img/background-polygons.png)*/
 	/*background: #0C0C0C;*/
 	color: rgba(255,255,255,.25);
-	font-size: .85rem;
+	font-size: 17px;
 	line-height: 1.846;
     padding: 3rem 2rem 2rem 2.5rem;
     height: 100%;
@@ -562,7 +587,6 @@ body{
 	display: inline-block;
 }
 .btn-outline-ligther{
-	font-size: .8rem;
     margin-top: 6rem;
     padding: 10px 10px;
     width: 100%;
@@ -589,7 +613,7 @@ body{
 	background-position: center center;
 }
 .b4-img{
-	width: 11rem;
+	width: 8rem;
 }
 .hero__main{
 	margin-bottom: 2rem;
@@ -662,6 +686,9 @@ body{
 /*
 7. HOW IT WORKS
 */
+.how-it-works{
+	background: #2f2f2f;
+}
 .passos{
 	margin: 2rem 1rem 1rem 1rem;
 }
@@ -743,7 +770,7 @@ body{
 .todomes-img{
 	margin: 0 auto 2rem auto;
 	display: block;
-	max-width: 20rem;
+	max-width: 22rem;
 }
 
 
