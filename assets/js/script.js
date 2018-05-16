@@ -1,7 +1,7 @@
 // ---------------------------------
 
 $(document).ready(function(){
-  // setInterval(function(){$(".heading-1st").html($(window).scrollTop());}, 100);
+      setInterval(function(){$(".heading-1st").html($(window).scrollTop());}, 100);
       $(".navbar-mobile__btn-close, .mask, .menu-toggle, .btn-outline-ligther, .navbar-mobile__nav__item__link").click(function(){
         $(".navbar-mobile").toggleClass("shown");
         $(".mask").toggle();
@@ -17,10 +17,10 @@ $(document).ready(function(){
     if(currentScroll > lastScroll)
       isGoingUp = false;
 
-    if(isGoingUp && currentScroll > limit + 20){
+    if(isGoingUp && currentScroll > limit + 20 || (lastScroll < 0 && currentScroll >= 0)){
       $(".back2top").addClass("shown");
     }
-    if((!isGoingUp || currentScroll < limit - 20) || (lastScroll < 0 && currentScroll >= 0)){
+    if(!isGoingUp || currentScroll < limit - 20){
       $(".back2top").removeClass("shown");
     }
     // if(currentScroll < limit - 20)){
