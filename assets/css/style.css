@@ -448,14 +448,14 @@ body{
 	border-top-left-radius: 7px;
 	padding: 5px 10px;
 	right: 0;
-	top: 20px;
+	top: 3vh;
 	/*top: calc(60% - 23px);*/
 	background-color: #000;
 	z-index: 550;
 	transition: 0.5s all;
 }
 .menu-no-meio{
-	top: calc(60% - 23px);
+	top: calc(60vh - 23px);
 }
 .menu-toggle:focus{
 	outline: none;
@@ -636,7 +636,7 @@ body{
 .arrow{
     text-align: center;
     width: 100%;
-    top: 90%;
+    top: 90vh;
     position: absolute;
     right: 0;
     font-size: 2.5rem;
