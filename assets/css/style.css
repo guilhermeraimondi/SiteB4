@@ -444,12 +444,10 @@ body{
 	box-shadow: -1px 3px 7px #000000ba;
 	font-size: 25px;
 	position: fixed;
-	/*border-bottom-left-radius: 7px;*/
 	border-top-left-radius: 7px;
 	padding: 5px 10px;
 	right: 0;
 	top: 3vh;
-	/*top: calc(60% - 23px);*/
 	background-color: #000;
 	z-index: 550;
 	transition: 0.5s all;
@@ -473,7 +471,6 @@ body{
 	font-size: 25px;
 	position: fixed;
 	border-bottom-left-radius: 7px;
-	/*border-top-left-radius: 7px;*/
 	padding: 5px 10px;
 	right: 0;
 	top: calc(60vh + 23px);
