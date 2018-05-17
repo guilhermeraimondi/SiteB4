@@ -476,7 +476,7 @@ body{
 	/*border-top-left-radius: 7px;*/
 	padding: 5px 10px;
 	right: 0;
-	top: calc(60% + 23px);
+	top: calc(60vh + 23px);
 	background-color: #000;
 	z-index: 500;
 	transition: 0.5s all;
