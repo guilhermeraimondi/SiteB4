@@ -34,7 +34,7 @@ html{
 	font-size: 90%; /*deixa o ususario dar zoom na pag*/
 }
 body{
-	font-family: 'Marcellus SC', serif !important;
+	font-family: 'Open Sans', sans-serif !important;
 	box-sizing: border-box;
 }
 @media only screen and (min-width: 321px){
@@ -79,13 +79,9 @@ body{
 .btn-square{
 	/*font-weight: bold;*/
 	font-size: 1.2rem;
-    background-image: linear-gradient(to right, rgb(255, 145, 1), #ffec07d1);
-    -webkit-background-clip: text;
-    color: transparent;
     width: 100%;
     padding: .5rem;
-    border: 1.4px solid rgb(255, 186, 47);
-    margin-bottom: 1rem;
+    border: 1.4px solid black;
     border-radius: 4px;
 }
 .btn-square:hover{
@@ -167,11 +163,7 @@ body{
 	background: #00a8a6;
 }
 .bg-grad-blue{
-	background: linear-gradient(
-		to right bottom,
-		rgb(100, 197, 232),
-		rgba(246, 184, 32, 0.5))
-	/*background: linear-gradient(to left bottom,#64c5e8,#f6b820);*/
+	background: linear-gradient(to bottom, rgb(2, 166, 192), #02c3e61a);
 }
 .bg-yellow{
 	background: #f0c33a;
@@ -230,7 +222,7 @@ body{
 	width: 350px !important;
 }
 .section{
-	padding: 4.5rem 0;
+	padding: 2rem 0 7rem 0;
 }
 .display-50{
 	font-size: 1.94rem;
@@ -262,10 +254,15 @@ body{
 	font-size: 1.6rem;
 	font-weight: bold;
 	margin-bottom: 1.6rem;
+	color: #2b3546;
+	text-shadow: 0.2px 0.2px 0.2px #2b3546;
 }
 .heading-5th{
 	font-weight: bold;
 	margin-bottom: 1.3rem;
+}
+.heading-1st, .heading-2nd, .heading-3rd, .heading-4th, .heading-5th{
+	font-family: 'Marcellus SC', serif !important;
 }
 .hide{
 	display: none;
@@ -600,14 +597,22 @@ body{
 6. HERO
 */
 .hero{
-	height: 100vh;
+	height: 120vh;
+	overflow: hidden;
+	position: relative;
 	background-image: linear-gradient(
 		to right bottom,
-		rgba(0,0,0,0.8),
+		rgba(0,0,0,0.7),
 		rgba(0,0,0,0.6)),
 		url(../img/teatro-home.jpeg);
 	background-size: cover;
 	background-position: center center;
+}
+.cut{
+	/*width: 100%;*/
+	z-index: 505;
+	position: absolute;
+	bottom: 0;
 }
 .b4-img{
 	width: 8rem;
@@ -684,22 +689,30 @@ body{
 7. HOW IT WORKS
 */
 .how-it-works{
-	background: #2f2f2f;
+	overflow: hidden;
+	position: relative;
+	background-color: #eff0ef;
 }
 .passos{
-	margin: 2rem 1rem 1rem 1rem;
+	margin: 2.5rem 0;
 }
 .img-passos{
-	max-width: 12rem;
+	max-width: 10rem;
 	display: block;
 	margin: 0 auto 1.5rem auto;
 }
 .img-passos-maior{
-	max-width: 100%;
+	max-width: 80%;
 }
 @media only screen and (min-width: 992px){
+	.how-it-works{
+		height: 100vh;
+	}
   	.descrip-title{
   		text-align: left;
+  	}
+  	.passos{
+  		margin: 0 1.5rem;
   	}
 	.passos__itens{
 		display: flex;
@@ -709,6 +722,10 @@ body{
 	.passos__itens__item{
 		margin: 0 2.5rem;
 	}
+	.img-passos-maior{
+		margin-top: 50px;
+		max-width: 90%;
+	}
 }
 
 
@@ -716,10 +733,13 @@ body{
 8. WORKS DONE
 */
 .works-done{
-	background-image: url(../img/bricks.jpg);
+	overflow: hidden;
+	position: relative;
+	background-color: #646564;
+	/*background-image: url(../img/bricks3.png);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: top;
+	background-position: top;*/
 }
 
 .card-boxes{
@@ -756,7 +776,9 @@ body{
 9. TESTIMONIAL
 */
 .testimonial{
-	background-color: #e6e6e6;
+	overflow: hidden;
+	position: relative;
+	background-color: #eff0ef;
     color: #757575;
 }
 
