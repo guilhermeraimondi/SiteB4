@@ -163,7 +163,7 @@ body{
 	background: #00a8a6;
 }
 .bg-grad-blue{
-	background: linear-gradient(to bottom, rgb(2, 166, 192), #02c3e61a);
+	background: linear-gradient(to bottom, rgb(2, 189, 206), #02c3e61a);
 }
 .bg-yellow{
 	background: #f0c33a;
@@ -221,8 +221,9 @@ body{
 	margin: .2rem;
 	width: 350px !important;
 }
-.section{
-	padding: 2rem 0 7rem 0;
+.clip{
+	-webkit-clip-path: polygon(0 3%, 100% 0%, 100% 100%, 0% 100%);
+	clip-path: polygon(0 3%, 100% 0%, 100% 100%, 0% 100%);
 }
 .display-50{
 	font-size: 1.94rem;
@@ -241,7 +242,7 @@ body{
 	font-size: 3rem;
 	line-height: 3rem;
     font-weight: 500;
-    background-image: linear-gradient(to right, rgb(0, 187, 255), rgb(19, 185, 131));
+    background-image: linear-gradient(to right, rgb(255, 0, 17), rgb(255, 59, 2));
     -webkit-background-clip: text;
     color: transparent;
    	margin-bottom: 3rem;
@@ -254,8 +255,7 @@ body{
 	font-size: 1.6rem;
 	font-weight: bold;
 	margin-bottom: 1.6rem;
-	color: #2b3546;
-	text-shadow: 0.2px 0.2px 0.2px #2b3546;
+	color: #ed6d46;
 }
 .heading-5th{
 	font-weight: bold;
@@ -299,19 +299,18 @@ body{
 	color: #fff;
 	opacity: .5;
 }
-.btn-flat:active {
-    box-shadow: 0 0 #ab3c3c;
-    top: 6px;
+.btn-flat:focus{
+	outline: none;
 }
 .btn-flat:hover {
-    box-shadow: 0 4px #018e5f;
+    box-shadow: 0 4px #700107;
     top: 2px;
 }
 .btn-flat {
     border: none;
     border-radius: 5px;
-    background-image: linear-gradient(to bottom right, rgb(100, 197, 232), rgb(19, 185, 131));
-    /*background: #15b983;*/
+    background-image: linear-gradient(to bottom right, rgb(196, 18, 25), rgb(157, 6, 18));
+    /* background: #15b983; */
     cursor: pointer;
     padding: 15px 80px;
     display: inline-block;
@@ -326,7 +325,7 @@ body{
     transition: all 0.3s;
     /* background: #cb4e4e; */
     color: #fff;
-    box-shadow: 0 6px #018e5f;
+    box-shadow: 0 6px #710007;
     -webkit-transition: none;
     -moz-transition: none;
     transition: none;
@@ -420,7 +419,7 @@ body{
 	width: 1.7rem;
 }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-    background: #13b988;
+    background: #ef4445;
 }
 .owl-theme .owl-nav.disabled + .owl-dots {
     margin-top: 2rem;
@@ -472,7 +471,7 @@ body{
 	right: 0;
 	top: calc(60vh + 23px);
 	background-color: #000;
-	z-index: 500;
+	z-index: 550;
 	transition: 0.5s all;
 }
 .back2top:focus{
@@ -541,7 +540,7 @@ body{
     transition: 0.3s all ease;
 }
 .navbar-mobile__btn-close:hover{
-	color: #67dea3;
+	color: #ef4445;
 	transform: translateX(4px);
 }
 .navbar__content{
@@ -597,28 +596,39 @@ body{
 6. HERO
 */
 .hero{
-	height: 120vh;
+	height: 100vh;
 	overflow: hidden;
 	position: relative;
 	background-image: linear-gradient(
 		to right bottom,
 		rgba(0,0,0,0.7),
 		rgba(0,0,0,0.6)),
-		url(../img/teatro-home.jpeg);
+		url(../img/teatro-home.jpg);
 	background-size: cover;
 	background-position: center center;
 }
 .cut{
-	/*width: 100%;*/
 	z-index: 505;
 	position: absolute;
-	bottom: 0;
+	bottom: -1px;
+}
+.cut-100{
+	max-height: 4.5rem;
+	width: 100%;
+	z-index: 505;
+	position: absolute;
+	bottom: -1px;
 }
 .b4-img{
+	display: block;
+	margin: 0 auto;
 	width: 8rem;
 }
+.clube-img{
+	max-width: 25rem;
+}
 .hero__main{
-	margin-bottom: 2rem;
+	margin-bottom: 6rem;
 }
 .hero__content{
 	z-index: 500;
@@ -691,7 +701,7 @@ body{
 .how-it-works{
 	overflow: hidden;
 	position: relative;
-	background-color: #eff0ef;
+	padding: 3.5rem 0;
 }
 .passos{
 	margin: 2.5rem 0;
@@ -733,13 +743,14 @@ body{
 8. WORKS DONE
 */
 .works-done{
+	padding: 3.5rem 0 7rem 0;
 	overflow: hidden;
 	position: relative;
-	background-color: #646564;
-	/*background-image: url(../img/bricks3.png);
+	background: linear-gradient(to bottom, #646564, #312f2f);
+	background-image: url(../img/bricks.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: top;*/
+	background-position: top;
 }
 
 .card-boxes{
@@ -776,9 +787,10 @@ body{
 9. TESTIMONIAL
 */
 .testimonial{
+	padding: 1rem 0 7rem 0;
 	overflow: hidden;
 	position: relative;
-	background-color: #eff0ef;
+	background-color: #fff;
     color: #757575;
 }
 
@@ -787,6 +799,7 @@ body{
 10. EVERY MONTH HAS A COMEDY (PROJECT)
 */
 .todomes-img{
+	padding: 2rem 0 3.5rem 0;
 	margin: 0 auto 2rem auto;
 	display: block;
 	max-width: 22rem;
@@ -797,6 +810,7 @@ body{
 11. FOOTER
 */
 .contact{
+	padding: 2rem 0 1.75rem 0;
 	background: #262626;
 }
 .line-fade{
@@ -806,10 +820,10 @@ body{
     background-image: linear-gradient(to right, rgba(90,90,90, 0), rgba(90,90,90, 0.75), rgba(90,90,90, 0));
 }
 .footer{
+	padding: 1.75rem 0 2rem 0;
 	border-top: 2px solid #262626;
 	background: #262626;
 	color: white;
-	padding: 0 1rem 2rem 1rem;
 	text-align: center;
 }
 .img-logo{
