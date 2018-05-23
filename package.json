@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/guilhermeraimondi/SiteB4/issues"
   },
-  "homepage": "https://github.com/guilhermeraimondi/SiteB4#readme"
+  "homepage": "https://github.com/guilhermeraimondi/SiteB4#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^4.1.0"
+  }
 }
