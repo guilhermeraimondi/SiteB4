@@ -604,11 +604,12 @@ body{
 	position: relative;
 	background-image: linear-gradient(
 		to bottom,
-		rgba(0,0,0,0.6),
+		rgba(0,0,0,0.15),
 		rgba(0,0,0,0.8)),
-		url(../img/teatro-home.jpg);
+		url(../img/theatre-audience.jpg);
 	background-size: cover;
 	background-position: center center;
+	background-repeat: no-repeat;
 }
 .cut{
 	z-index: 505;
