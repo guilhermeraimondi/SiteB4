@@ -1,0 +1,19 @@
+{
+  "name": "b4",
+  "version": "1.0.0",
+  "description": "Landing page for B4 Clube de Vantagens",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guilhermeraimondi/SiteB4.git"
+  },
+  "author": "Guilherme Raimondi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guilhermeraimondi/SiteB4/issues"
+  },
+  "homepage": "https://github.com/guilhermeraimondi/SiteB4#readme"
+}

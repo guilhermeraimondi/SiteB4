@@ -2,48 +2,46 @@
 
 $(document).ready(function(){
       // setInterval(function(){$(".heading-1st").html($(window).scrollTop());}, 100);
-      // $(".navbar-mobile__btn-close, .mask, .menu-toggle, .btn-outline-ligther, .navbar-mobile__nav__item__link").click(function(){
-      //   $(".navbar-mobile").toggleClass("shown");
-      //   $(".mask").toggle();
-      //   $("body").toggleClass("dont-scroll-body");
-      // });
+      $(".navbar-mobile__btn-close, .mask, .menu-toggle, .btn-outline-ligther, .navbar-mobile__nav__item__link").click(function(){
+        $(".navbar-mobile").toggleClass("shown");
+        $(".mask").toggle();
+        $("body").toggleClass("dont-scroll-body");
+      });
 
-  //   var lastScroll = 0;
-  // $(window).scroll(function(){
-  //   var currentScroll = $(this).scrollTop();
-  //   var distMenuTopo = $(".menu-toggle").offset().top;
-  //   var homeHeight = $(".hero").innerHeight();
-  //   var isGoingUp = true;
-  //   var limit = homeHeight - $(".back2top").position().top;
-  //   if(currentScroll > lastScroll)
-  //     isGoingUp = false;
+    var lastScroll = 0;
+  $(window).scroll(function(){
+    var currentScroll = $(this).scrollTop();
+    var distMenuTopo = $(".menu-toggle").offset().top;
+    var homeHeight = $(".hero").innerHeight();
+    var isGoingUp = true;
+    var limit = homeHeight - $(".back2top").position().top;
+    if(currentScroll > lastScroll)
+      isGoingUp = false;
 
-  //   if(isGoingUp && currentScroll > limit + 20 || lastScroll <= 0){
-  //     $(".back2top").addClass("shown");
-  //   }
-  //   if(!isGoingUp || currentScroll < limit - 20){
-  //     $(".back2top").removeClass("shown");
-  //   }
-  //   // if(currentScroll < limit - 20)){
-  //   //   $(".menu-toggle").css("top", "20px");
-  //   // }
+    if(isGoingUp && currentScroll > limit + 20 || lastScroll <= 0){
+      $(".back2top").addClass("shown");
+    }
+    if(!isGoingUp || currentScroll < limit - 20){
+      $(".back2top").removeClass("shown");
+    }
+    // if(currentScroll < limit - 20)){
+    //   $(".menu-toggle").css("top", "20px");
+    // }
 
 
-  //   if(isGoingUp)
-  //     $(".menu-toggle").addClass("shown");
-  //   else
-  //     $(".menu-toggle").removeClass("shown");
+    if(isGoingUp)
+      $(".menu-toggle").addClass("shown");
+    else
+      $(".menu-toggle").removeClass("shown");
 
-  //   lastScroll = currentScroll;
+    lastScroll = currentScroll;
 
-  //   if(distMenuTopo > (homeHeight * 0.6)){
-  //     $(".menu-toggle").addClass("menu-no-meio");
-  //     $(".menu-toggle").addClass("box-shadow");
-  //   } else{
-  //     $(".menu-toggle").removeClass("menu-no-meio");
-  //     $(".menu-toggle").removeClass("box-shadow");
-  //   }
-  // });
+    if(distMenuTopo > (homeHeight * 0.6 - 23)){
+      $(".menu-toggle").addClass("menu-no-meio");
+    } else{
+      $(".menu-toggle").removeClass("menu-no-meio");
+    }
+  });
       
       // $(".navbar-mobile__nav__item__link").click(function(event){
       //   event.preventDefault();
