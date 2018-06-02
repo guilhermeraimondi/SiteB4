@@ -7,6 +7,7 @@
   <!-- Bootstrap 4 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css?family=Kanit:800|Mr+Dafoe" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins:600|Roboto" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
@@ -20,6 +21,7 @@
   <title>Clube de Vantagens | B4</title>
 </head>
 <body>
+  <div class="mask hide"></div>
   <main>
     <div class="nav-fixed">
       <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: hidden">
@@ -44,16 +46,16 @@
         <div id="dummy" class="dummy">
           <div class="dummy__item">
 
-            <a class="navbar-mobile__nav__item__link link" href="#home"><i class="menu-icon fas fa-home"></i>Home</a>
+            <a class="link navbar-mobile__nav__item__link" href="#home"><i class="menu-icon fas fa-home"></i>Home</a>
           </div>
           <div class="dummy__item">
-            <a class="navbar-mobile__nav__item__link link" href="#howworks"><i class="menu-icon fas fa-cogs"></i>Como funciona</a>
+            <a class="link navbar-mobile__nav__item__link" href="#howworks"><i class="menu-icon fas fa-cogs"></i>Como funciona</a>
           </div>
           <div class="dummy__item">
-            <a class="navbar-mobile__nav__item__link link" href="#works-done"><i class="menu-icon fas fa-clipboard-list"></i>Eventos realizados</a>
+            <a class="link navbar-mobile__nav__item__link" href="#works-done"> <i class="menu-icon fas fa-clipboard-list"></i> Eventos realizados</a>
           </div>
           <div class="dummy__item">
-            <a class="navbar-mobile__nav__item__link link" href="#todo-mes"><i class="menu-icon fas fa-child"></i>Todo Mês Tem Comédia</a>
+            <a class="link navbar-mobile__nav__item__link" href="#todo-mes"><i class="menu-icon fas fa-child"></i>Todo Mês Tem Comédia</a>
           </div>
         </div>
 
@@ -124,30 +126,26 @@
               <a class="navbar-mobile__nav__item__link link" href="#todo-mes">Todo Mês Tem Comédia</a>
             </li>
 
-            <li class="navbar-mobile__nav__item"><button class="btn-flat text-yellow" data-toggle="modal" data-target="#myModal">Inscreva-se</button></li>
+            <li class="navbar-mobile__nav__item"><button class="btn-flat text-lightgreen" data-toggle="modal" data-target="#myModal">Inscreva-se</button></li>
           </ul>
         </div>
       </div> -->
       <div class="hero__content container text-center align-self-center text-white">
-        <img src="assets/img/logo_b4_draw.png" alt="logo" class="hero-logo">
-        <h1 class="heading-1st heading-1st--logo-text">B4</h1>
+        
 
-        <!-- Main -->
-        <div class="hero__main">
-          <!-- <img class="b4-img img-fluid" src="assets/img/logo-b4.png"> -->
-          <!-- <h1 class="textmain heading-1st">B4</h1> -->
-          <!-- <img class="clube-img" src="assets/img/clubevantagens.png"> -->
-          <h1 class="heading-1st heading-1st--main">Clube de Vantagens</h1>
-          
-          <!-- <h1 class="animate-right text-main heading-1st">Clube de Vantagens</h1> -->
-        </div>
+        <header class="Header">
+          <h1 class="Title">
+            Clube de Vantagens
+            <div class="Title-sub">B4 Produções</div>
+          </h1>
+          <div class="Header-sub SubHead">Venha rir com a gente!</div>
+        </header>
 
-        <!-- <p class="text-home text-shadow">Tenha acesso exclusivo a pré venda de grandes eventos, escolha os melhores lugares, ganhe descontos e brindes EXCLUSIVOS!</p> -->
-        <button class="btn-flat text-yellow"  data-toggle="modal" data-target="#myModal">Inscreva-se</button>
+        <button class="btn-flat btn-flat--dblue btn-hero text-lightgreen"  data-toggle="modal" data-target="#myModal">Inscreva-se</button>
 
         
         <div class="arrow">
-          <a class="bounce arrow-link fas fa-angle-down" href="#howworks"></a>
+          <a class="bounce text-white fas fa-angle-down" href="#howworks"></a>
         </div>
       </div>
     </div>
@@ -163,7 +161,7 @@
               <div class="passos__itens__item__content">
                 <h4 class="heading-4th">Inscreva-se</h4>
                 <p class="text-secondary">É só digitar seu nome, email e pronto, já está cadastrado!</p>
-                <button class="btn-flat text-white width-100" data-toggle="modal" data-target="#myModal">Fechou!</button>
+                <button class="btn-flat btn-flat--dblue text-white width-100" data-toggle="modal" data-target="#myModal">Fechou!</button>
               </div>
             </div>
           </div>
@@ -190,7 +188,7 @@
     </div>
 
     <div id="works-done" class="works-done">
-      <h2 class="animate-right heading-2nd text-center text-yellow">Eventos realizados.</h2>
+      <h2 class="animate-right heading-2nd text-center text-lightgreen">Eventos realizados.</h2>
 
       <div id="works" class="animate-top owl1 owl-carousel owl-theme text-white">
 
@@ -294,7 +292,7 @@
 
           <div class="testimonial col-sm-12 col-md-6 col-lg-4">
             <div class="testimonial-content testimonial-center d-flex align-items-center justify-content-center animate-top">
-              <h3 class="heading-3rd text-yellow">Aqui a gente faz.</h3>
+              <h3 class="heading-3rd">Aqui a gente faz.</h3>
             </div>
           </div>
 
@@ -353,50 +351,94 @@
 
   <div id="todo-mes" class="todomes">
     <div class="todomes-content container">
-      <img class="animate-right todomes-img" src="assets/img/todo-mes2.png">
-      <div class="animate-top text-light-grey lead">
+      <img class="animate-right todomes-img" src="assets/img/todo-mes.png">
+      <div class="animate-top text-light-grey">
         <p>Em 2017 nós da B4 realizamos o 'Palco da Comédia' no qual reunimos três dos melhores shows de stand-up do Brasil e colocamos eles no palco do Teatro Municipal em três finais de semana seguidos!</p>
         <p >Com o sucesso do Palco da Comédia a B4 Produções lançou em 2018 o 'Todo mês tem comédia!' onde nós garantimos <strong class="text-red font-weight-bold">um show de comédia por mês</strong> em Uberlândia!</p> 
         <p>É isso mesmo que você leu!</p>
+      </div>
+    </div>
 
-        <h3 class="todomes-heading animate-right heading-3rd text-center text-yellow">O que vem por aí.</h3>
+    <div class="todomes-content2 container">
+      <h3 class="todomes-heading animate-right heading-3rd text-center text-lightgreen">Se liga no que vem por aí.</h3>
 
         <div class="row  align-items-center justify-content-center animate-top text-light-grey next-events-box">
 
-          <div class="col-sm-12 col-md-4">
-            <div class="next-event">
-              <img class="card-img-next" src="assets/img/utc.jpeg" alt="Card image">
-              <!-- <div class="text-center card-icon">
-                <a class="text-shadow-light" target="_blank" href="https://www.youtube.com/channel/UCPi3uuGrh2mxnZJMfRhcjiw"><i class="icon youtube-icon fab fa-youtube"></i></a>
-              </div> --> 
-            </div>    
-          </div>
-
-          <div class="next-event col-sm-12 col-md-4">
-            <div class="col-sm-12 col-md-4">
-              <img class="card-img-next" src="assets/img/fabiano-cambota.jpeg" alt="Card image">
-              <!-- <div class="text-center card-icon">
-                <a class="text-shadow-light" target="_blank" href="https://www.youtube.com/channel/UCPi3uuGrh2mxnZJMfRhcjiw"><i class="icon youtube-icon fab fa-youtube"></i></a>
-              </div> -->
-            </div>
-          </div>
-
-          <div class="next-event col-sm-12 col-md-4">
-            <div class="col-sm-12 col-md-4">
-              <img class="card-img-next" src="assets/img/afonso-padilha.jpeg" alt="Card image">
-              <!-- <div class="text-center card-icon">
-                <button class="btn-flat text-white">Saiba mais</button>
-              </div> -->
-            </div>
-          </div>
-        </div>
+          <figure class="card-flip fancy-hover">
+  <div class="card-flip__flipper">
+    <!-- FRONT SIDE -->
+    <figure class="card-flip__content card-flip__content--front">
+      <img class="fancy-hover__image" src="assets/img/utc.jpeg">
+      <div class="fancy-hover__fancy"></div>
+      <div class="fancy-hover__element fancy-hover__element--title">
+        <p class="fancy-hover__text text-lightgreen">UTC no Teatro</p>
       </div>
-      <div class="call justify-content-center text-center">
-        <h4 class="heading-4th text-white text-shadow-light">Quer ficar por dentro?</h4>
-        <button class="btn-flat text-white"  data-toggle="modal" data-target="#myModal">Inscreva-se</button>
+      <div class="fancy-hover__element fancy-hover__element--subtitle">
+        <img class="click-img" src="assets/img/click.png" alt="">
       </div>
-    </div>
+    </figure>
+    <!-- BACK SIDE -->
+    <figure class="card-flip__content card-flip__content--back">
+      <p class="card-name">UTC no Teatro</p>
+      <p class="old-price">R$ 40</p>
+      <p class="new-price">R$ 30</p>
+      <p>Preco exclusivo para inscritos!</p>
+      <p class="data-evento">18/06</p>
+    </figure>
   </div>
+</figure>
+
+<figure class="card-flip fancy-hover">
+  <div class="card-flip__flipper">
+    <!-- FRONT SIDE -->
+    <figure class="card-flip__content card-flip__content--front">
+      <img class="fancy-hover__image" src="assets/img/fabiano-cambota.jpeg">
+      <div class="fancy-hover__fancy"></div>
+      <div class="fancy-hover__element fancy-hover__element--title">
+        <p class="fancy-hover__text text-lightgreen">Fabiano Cambota</p>
+      </div>
+      <div class="fancy-hover__element fancy-hover__element--subtitle">
+        <img class="click-img" src="assets/img/click.png" alt="">
+      </div>
+    </figure>
+    <!-- BACK SIDE -->
+    <figure class="card-flip__content card-flip__content--back">
+      <p class="card-name">Fabiano Cambota</p>
+      <p class="old-price">R$ 40</p>
+      <p class="new-price">R$ 30</p>
+      <p>Preco exclusivo para inscritos!</p>
+      <p class="data-evento">11/07</p>
+    </figure>
+  </div>
+</figure>
+
+<figure class="card-flip fancy-hover">
+  <div class="card-flip__flipper">
+    <!-- FRONT SIDE -->
+    <figure class="card-flip__content card-flip__content--front">
+      <img class="fancy-hover__image" src="assets/img/afonso-padilha.jpeg">
+      <div class="fancy-hover__fancy"></div>
+      <div class="fancy-hover__element fancy-hover__element--title">
+        <p class="fancy-hover__text text-lightgreen">Afonso Padilha</p>
+      </div>
+      <div class="fancy-hover__element fancy-hover__element--subtitle">
+        <img class="click-img" src="assets/img/click.png" alt="">
+      </div>
+    </figure>
+    <!-- BACK SIDE -->
+    <figure class="card-flip__content card-flip__content--back">
+      <p class="card-name">Afonso Padilha</p>
+      <p class="old-price">R$ 40</p>
+      <p class="new-price">R$ 30</p>
+      <p>Preco exclusivo para inscritos!</p>
+      <p class="data-evento">05/08</p>
+    </figure>
+  </div>
+</figure>
+</div>
+        
+  </div>
+</div>
   
   
   <div class="footer">
@@ -420,7 +462,7 @@
         </div>
       </div>
       <div class="bottom-footer text-center">
-        <p>Desenvolvido por Guilherme Raimondi - Techmob</p>
+        <p>Desenvolvido por <span class="author"> Guilherme Raimondi </span> (Techmob)</p>
         <p class="">&copy; 2018 B4 Produções. All rights reserved.</p>
       </div>
     </div>
@@ -455,7 +497,7 @@
             </div>
             <input type="email" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
           </div>
-          <button type="button" class="btn-flat text-white width-100">Cadastrar</button>
+          <button type="button" class="btn-flat btn-flat--dblue text-white width-100">Cadastrar</button>
         </div>
 
         <!-- Modal footer -->
@@ -478,6 +520,6 @@
   <script src="assets/js/ease.min.js"></script>
   <script type="text/javascript" src="assets/js/script.js"></script>
   <script src="assets/js/main.js"></script>
-  <div class="mask hide"></div>
+  
 </body>
 </html>

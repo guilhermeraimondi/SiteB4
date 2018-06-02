@@ -1,55 +1,19 @@
-// ---------------------------------
-
 $(document).ready(function(){
-      // setInterval(function(){$(".heading-1st").html($(window).scrollTop());}, 100);
-      // $(".navbar-mobile__btn-close, .mask, .menu-toggle, .btn-outline-ligther, .navbar-mobile__nav__item__link").click(function(){
-      //   $(".navbar-mobile").toggleClass("shown");
-      //   $(".mask").toggle();
-      //   $("body").toggleClass("dont-scroll-body");
-      // });
+  var cardHeight = $('.fancy-hover__fancy').innerHeight();
+  $('.card-flip__content--back').height(cardHeight-32);
+  var classClicked = 'clicked';
 
-  //   var lastScroll = 0;
-  // $(window).scroll(function(){
-  //   var currentScroll = $(this).scrollTop();
-  //   var distMenuTopo = $(".menu-toggle").offset().top;
-  //   var homeHeight = $(".hero").innerHeight();
-  //   var isGoingUp = true;
-  //   var limit = homeHeight - $(".back2top").position().top;
-  //   if(currentScroll > lastScroll)
-  //     isGoingUp = false;
-
-  //   if(isGoingUp && currentScroll > limit + 20 || lastScroll <= 0){
-  //     $(".back2top").addClass("shown");
-  //   }
-  //   if(!isGoingUp || currentScroll < limit - 20){
-  //     $(".back2top").removeClass("shown");
-  //   }
-  //   // if(currentScroll < limit - 20)){
-  //   //   $(".menu-toggle").css("top", "20px");
-  //   // }
-
-
-  //   if(isGoingUp)
-  //     $(".menu-toggle").addClass("shown");
-  //   else
-  //     $(".menu-toggle").removeClass("shown");
-
-  //   lastScroll = currentScroll;
-
-  //   if(distMenuTopo > (homeHeight * 0.6)){
-  //     $(".menu-toggle").addClass("menu-no-meio");
-  //     $(".menu-toggle").addClass("box-shadow");
-  //   } else{
-  //     $(".menu-toggle").removeClass("menu-no-meio");
-  //     $(".menu-toggle").removeClass("box-shadow");
-  //   }
-  // });
-      
-      // $(".navbar-mobile__nav__item__link").click(function(event){
-      //   event.preventDefault();
-      //   $('html,body').animate({
-      //     scrollTop:$(this.hash).offset().top}, 1000);
-      // });
+  $("#divInterna").height(50);
+  $('.card-flip').click(function() {
+    if($(this).hasClass(classClicked)) {
+      $(this).removeClass(classClicked);
+    }
+    else {
+      $(this).addClass(classClicked);
+    }
+  }).mouseleave(function() {
+    $(this).removeClass(classClicked);
+  });
 
       $('.owl1').owlCarousel({
         responsive:{
@@ -104,7 +68,7 @@ $(document).ready(function(){
 
 
 // Ease Scroll
-$(".navbar-mobile__nav__item__link, .arrow-link, .back2top-link").click(function(e){
+$(".navbar-mobile__nav__item__link, .fa-angle-down, .back2top-link").click(function(e){
   e.preventDefault(); //nao usar o 'teleporte' padrao do html
   var id = $(this).attr('href'), // attr puxa o atributo q vc quer
       targetOffset = $(id).offset().top; // pegar distancia do topo
